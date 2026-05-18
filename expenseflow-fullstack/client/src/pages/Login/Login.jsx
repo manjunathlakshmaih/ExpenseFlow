@@ -26,7 +26,9 @@ const Login = () => {
             <div className="right-panel">
                 <LoginForm onsubmit={handleSubmit} />
                 {error && <p style={{ color: "red" }}>{error}</p>}
+                <div className="loading-indicator">
                 {loading && <OrbitProgress color="#32cd32" size="medium" text="" textColor="" />}
+                </div>
             </div>
         </div>
     )
