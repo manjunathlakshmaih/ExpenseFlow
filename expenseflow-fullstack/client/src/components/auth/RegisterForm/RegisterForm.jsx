@@ -5,7 +5,7 @@ import { MdOutlineEmail } from "react-icons/md";
 import "./RegisterForm.css";
 
 const RegisterForm = ({ onsubmit }) => {
-    const [fullName, setFullName] = useState("");
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -13,7 +13,7 @@ const RegisterForm = ({ onsubmit }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const FormData = {
-            fullName,
+            name,
             email,
             password,
             confirmPassword
@@ -33,8 +33,8 @@ const RegisterForm = ({ onsubmit }) => {
                         type="text"
                         id="name" name="name"
                         className="register-input"
-                        value={fullName}
-                        onChange={(e) => setFullName(e.target.value)}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                         required
                     />
                 </div>
@@ -71,14 +71,14 @@ const RegisterForm = ({ onsubmit }) => {
                     </div>
                 </div>
                 <div className="input-field">
-                    <label htmlFor="confirmpassword" className="login-label">Confirm Password</label>
+                    <label htmlFor="confirmPassword" className="login-label">Confirm Password</label>
                     <input
-                        type="confirmpassword"
-                        id="confirmpassword"
-                        name="confirmpassword"
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
                         className="register-input"
                         value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.confirmPassword)}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
                         required
                     />
                 </div>

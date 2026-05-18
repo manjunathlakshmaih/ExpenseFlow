@@ -1,11 +1,23 @@
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 import LoginForm from "../../components/auth/LoginForm/LoginForm";
 import AuthBanner from "../../components/auth/AuthBanner/AuthBanner";
+import { OrbitProgress } from "react-loading-indicators";
 import "./Login.css";
 
 const Login = () => {
-    const handleSubmit = (formData) => {
-        console.log(formData);
+    const { login, loading, error } = useAuth();
+    const navigate = useNavigate();
+
+    const handleSubmit = async (formData) => {
+        try {
+            await login(formData.email, formData.password);
+            navigate("/dashboard");
+        } catch (err) {
+            console.error("Login failed:", err);
+        }
     }
+
     return (
         <div className="login-container">
             <div className="left-panel">
@@ -13,6 +25,8 @@ const Login = () => {
             </div>
             <div className="right-panel">
                 <LoginForm onsubmit={handleSubmit} />
+                {error && <p style={{ color: "red" }}>{error}</p>}
+                {loading && <OrbitProgress color="#32cd32" size="medium" text="" textColor="" />}
             </div>
         </div>
     )
