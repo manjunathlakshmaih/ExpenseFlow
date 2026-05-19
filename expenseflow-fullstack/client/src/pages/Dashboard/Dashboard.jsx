@@ -1,10 +1,10 @@
 import React from "react";
+import DashboardLayout from "../../components/dashboard/Dashboard";
 
-const Dashboard =() => {
+const Dashboard = () => {
     return (
         <div>
-            <h1>Welcome to your Dashboard!</h1>
-            <p>This is where you can manage your expenses, view reports, and customize your settings.</p>
+            <DashboardLayout />
         </div>
     )
 }

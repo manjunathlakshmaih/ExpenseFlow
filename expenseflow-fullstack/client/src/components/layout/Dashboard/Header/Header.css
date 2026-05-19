@@ -1,0 +1,104 @@
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    animation: fadeIn 0.3s ease;
+}
+
+.sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 100;
+}
+
+.sidebar-wrapper.open {
+    transform: translateX(0);
+}
+
+.main-header-wrapper {
+    transition: margin-left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    flex: 1;
+}
+
+.main-header-wrapper.shifted {
+    margin-left: 250px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.nav-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 30px;
+    justify-content: space-between;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    .menu-toggle {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #666;
+    }
+
+    .search-input-field {
+        position: relative;
+    }
+
+    .search-input {
+        width: 40rem;
+    }
+
+    .search-icon {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+.nav-right {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    .nav-notifications {
+        cursor: pointer;
+    }
+
+    .nav-dark-mode-toggle {
+        cursor: pointer;
+    }
+
+    .nav-user-profile {
+        cursor: pointer;
+    }
+
+
+
+}
