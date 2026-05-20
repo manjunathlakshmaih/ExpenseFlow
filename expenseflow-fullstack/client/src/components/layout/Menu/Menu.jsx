@@ -1,5 +1,5 @@
 import React from "react";
-import UnorderedList from "../../../common/list";
+import UnorderedList from "../../common/list";
 import { FiLogOut } from "react-icons/fi";
 import { IoMdHome } from "react-icons/io";
 import { GiExpense } from "react-icons/gi";
@@ -10,7 +10,7 @@ import { GrTransaction } from "react-icons/gr";
 import { SlCalender } from "react-icons/sl";
 import { GiStairsGoal } from "react-icons/gi";
 import { IoSettingsOutline } from "react-icons/io5";
-import logo from "../../../../assets/images/expns_logo.png"
+import logo from "../../../assets/images/expns_logo.png";
 import './Menu.css';
 
 const DashboardMenu = ({ onClose }) => {
@@ -38,13 +38,13 @@ const DashboardMenu = ({ onClose }) => {
                 <img className="menu-logo" src={logo} />
                 <span className="dashboard_title">ExpenseTracker</span>
             </div>
-            <ul className="menu-list">
+            <div className="menu-list">
                 <UnorderedList
                     items={transactions}
                     className="menu-items"
                     onClick={handleMenuItemClick}
                 />
-            </ul>
+            </div>
             <div className="logout-button">
                 <button>Logout</button>
                 <FiLogOut size={35} className="logout-icon" />

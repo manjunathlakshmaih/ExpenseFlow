@@ -1,0 +1,34 @@
+.stat-card {
+    background: #ffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 25px 2px 0px;
+    border-radius: 7px;
+    box-shadow: 2px 5px 10px #4949491a;
+    min-width: 250px;
+    gap: 20px;
+}
+
+.stat-card-left img {
+    width: 140px;
+}
+
+.title {
+    font-size: 14px;
+    color: #686868;
+    font-weight: 500;
+    line-height: 1.90;
+}
+
+.stat-card-rigt h2 {
+    font-size: 20px;
+    color: #232323;
+    font-weight: 600;
+    line-height: 2;
+}
+
+.stat-card-rigt .change {
+    font-size: 12px;
+    font-weight: 500;
+}
