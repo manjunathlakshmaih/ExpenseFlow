@@ -1,5 +1,5 @@
 .transaction-history-container {
-    width: 22rem;
+    min-width: 300px;
     background-color: #ffff;
     padding: 20px;
     box-shadow: 2px 5px 10px #4949491a;

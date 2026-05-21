@@ -1,9 +1,9 @@
 .line-card {
-    width: 45rem;
     background-color: #ffff;
     padding: 20px;
     box-shadow: 2px 5px 10px #4949491a;
     border-radius: 7px;
+    min-width: 550px;
 }
 
 h3 {

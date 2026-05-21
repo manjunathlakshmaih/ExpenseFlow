@@ -1,8 +1,8 @@
 .chart-container {
+  min-width: 450px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 32rem;
   background-color: #ffff;
   padding: 20px;
   box-shadow: 2px 5px 10px #4949491a;
@@ -10,9 +10,9 @@
 }
 
 h3 {
-    font-size: 18px;
-    color: rgb(83, 81, 81);
-    margin-bottom: 20px;
+  font-size: 18px;
+  color: rgb(83, 81, 81);
+  margin-bottom: 20px;
 }
 
 .legend {

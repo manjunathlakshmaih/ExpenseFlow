@@ -1,20 +1,57 @@
 import './transactionhistory.css';
 import UnorderedList from '../../common/list';
 
-const TransactionHistory = () => {
-    const transactionsData = [
-        { id: 1, description: "Grocery Shopping", amount: "$150.00", date: "2024-06-01" },
-        { id: 2, description: "Electricity Bill", amount: "$75.00", date: "2024-06-03" },
-        { id: 3, description: "Dinner at Restaurant", amount: "$60.00", date: "2024-06-05" },
-        { id: 4, description: "Online Subscription", amount: "$20.00", date: "2024-06-07" },
-        { id: 5, description: "Gas Refill", amount: "$40.00", date: "2024-06-10" },
+const TransactionHistory = ({ Icon }) => {
+
+    // const categoryIcons = {
+    //     entertainment: NetflixIcon,
+    //     "food & dining": GroceryIcon,
+    //     income: SalaryIcon,
+    //     transportation: CarIcon,
+    //     "bills & utilities": ElectricityIcon,
+    // };
+
+    const transactions = [
+        {
+            title: "Netflix Subscription",
+            category: "entertainment",
+            amount: -15.99,
+            date: "May 24",
+        },
+        {
+            title: "Grocery Shopping",
+            category: "food & dining",
+            amount: -89.50,
+            date: "May 24",
+        },
+        {
+            title: "Salary Deposit",
+            category: "income",
+            amount: 2500.00,
+            date: "May 23",
+        }
     ];
     return (
         <div className="transaction-history-container">
             <h3>Recent Transactions</h3>
-            <div className="transaction-list">
-                <UnorderedList items={transactionsData} />
-            </div>
+            {transactions.map((item, index) => (
+                <div className="transaction-list" key={index}>
+                    {/* <div className='icon'>
+                        {Icon}
+                    </div> */}
+                    <div className='details'>
+                        <h4>{item.title}</h4>
+                        <p>{item.category}</p>
+                    </div>
+                    <div className="right">
+                        <span className={item.amount > 0 ? "positive" : "negative"}>
+                            {item.amount > 0 ? `+${item.amount}` : item.amount}
+                        </span>
+                        <p>{item.date}</p>
+                    </div>
+                </div>
+            ))}
+            <p>View All Transactions &rarr;</p>
         </div>
     )
 }

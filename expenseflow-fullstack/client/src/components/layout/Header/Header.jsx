@@ -14,11 +14,6 @@ const NavHeader = ({ isMenuOpen, toggleMenu, onMenuClose, onClick }) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
     return (
         <>
-            {/* Overlay */}
-            {isMenuOpen && (
-                <div className="menu-overlay" onClick={onMenuClose}></div>
-            )}
-
             {/* Sidebar Menu */}
             <div className={`sidebar-wrapper ${isMenuOpen ? 'open' : ''}`}>
                 <DashboardMenu onClose={onMenuClose} />
