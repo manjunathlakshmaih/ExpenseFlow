@@ -1,5 +1,4 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
-// import '../charts.css';
 
 const data = [
   { name: "Food & Dining", value: 30 },
@@ -14,9 +13,7 @@ const COLORS = ["#4f46e5", "#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#9ca3af"
 
 const DonutChart = () => {
   return (
-    <div className="card">
-      <h3>Expenses by Category</h3>
-
+    <div className="donutchart-card">
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>
           <Pie

@@ -7,7 +7,8 @@ import {
     ResponsiveContainer,
     CartesianGrid
 } from "recharts";
-import './charts.css';
+import DateSelection from "../../common/Dropdown";
+import './linecharts.css';
 
 const data = [
     { day: "1 May", amount: 200 },
@@ -22,7 +23,10 @@ const data = [
 const ExpenseChart = () => {
     return (
         <div className="line-card">
-            <h3>Expense Overview</h3>
+            <div className="linecard-header">
+                <h3>Expense Overview</h3>
+                <DateSelection />
+            </div>
             <ResponsiveContainer width="100%" height={300}>
                 <LineChart data={data}>
                     <CartesianGrid stroke="#eee" vertical={false} />

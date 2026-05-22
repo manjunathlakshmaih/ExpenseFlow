@@ -1,5 +1,6 @@
 import CustomLegend from "./CustomLegend";
 import DonutChart from "./DonutChart";
+import DateSelection from "../../common/Dropdown";
 import './DonutChartLayout.css';
 
 const DonutChartContainer = () => {
@@ -13,8 +14,14 @@ const DonutChartContainer = () => {
     ];
     return (
         <div className="chart-container">
-            <DonutChart />
-            <CustomLegend data={data} />
+            <div className="card-header">
+                <h3>Expenses by Category</h3>
+                <DateSelection />
+            </div>
+            <div className="card-body">
+                <DonutChart />
+                <CustomLegend data={data} />
+            </div>
         </div>
     )
 }

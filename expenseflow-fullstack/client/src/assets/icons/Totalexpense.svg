@@ -1,0 +1,20 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="64" height="64" rx="14" fill="#F24B63"/>
+
+  <!-- Trend line -->
+  <path d="M18 36 L28 28 L36 36 L46 26" 
+        fill="none" 
+        stroke="#FFFFFF" 
+        stroke-width="3" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+
+  <!-- Arrow head -->
+  <polyline points="40,26 46,26 46,32" 
+            fill="none" 
+            stroke="#FFFFFF" 
+            stroke-width="3" 
+            stroke-linecap="round" 
+            stroke-linejoin="round"/>
+</svg>

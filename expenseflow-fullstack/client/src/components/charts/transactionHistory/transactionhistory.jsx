@@ -1,15 +1,20 @@
 import './transactionhistory.css';
-import UnorderedList from '../../common/list';
+import { useEffect, useState } from 'react';
+import NetflixIcon from '../../../assets/icons/netflix.svg';
+import GroceryIcon from '../../../assets/icons/GroceryIcon.svg';
+import SalaryIcon from '../../../assets/icons/SalaryIcon.svg';
+import CarIcon from '../../../assets/icons/CarIcon.svg';
+import ElectricityIcon from '../../../assets/icons/ElectricityIcon.svg';
 
 const TransactionHistory = ({ Icon }) => {
-
-    // const categoryIcons = {
-    //     entertainment: NetflixIcon,
-    //     "food & dining": GroceryIcon,
-    //     income: SalaryIcon,
-    //     transportation: CarIcon,
-    //     "bills & utilities": ElectricityIcon,
-    // };
+    const [isFullHistoryRequired, setIsFullHistoryRequired] = useState(false);
+    const categoryIcons = {
+        entertainment: NetflixIcon,
+        "food & dining": GroceryIcon,
+        income: SalaryIcon,
+        transportation: CarIcon,
+        "bills & utilities": ElectricityIcon,
+    };
 
     const transactions = [
         {
@@ -29,19 +34,60 @@ const TransactionHistory = ({ Icon }) => {
             category: "income",
             amount: 2500.00,
             date: "May 23",
+        },
+        {
+            title: "Uber Ride",
+            category: "transportation",
+            amount: 2500.00,
+            date: "May 23",
+        },
+        {
+            title: "Salary Deposit",
+            category: "income",
+            amount: 2500.00,
+            date: "May 23",
+        },
+        {
+            title: "Salary Deposit",
+            category: "income",
+            amount: 2500.00,
+            date: "May 23",
+        },
+        {
+            title: "Salary Deposit",
+            category: "income",
+            amount: 2500.00,
+            date: "May 23",
         }
     ];
+    useEffect(() => {
+        if (transactions.length > 6) {
+            setIsFullHistoryRequired(true);
+        } else {
+            setIsFullHistoryRequired(false);
+        }
+    }, [transactions]);
+
     return (
         <div className="transaction-history-container">
-            <h3>Recent Transactions</h3>
-            {transactions.map((item, index) => (
+            <div className="transaction-history-header">
+                <h3>Recent Transactions</h3>
+            </div>
+            {transactions.slice(0, 6).map((item, index) => (
                 <div className="transaction-list" key={index}>
-                    {/* <div className='icon'>
-                        {Icon}
-                    </div> */}
+
                     <div className='details'>
-                        <h4>{item.title}</h4>
-                        <p>{item.category}</p>
+                        <div className='icon'>
+                            {categoryIcons[item.category] ? (
+                                <img src={categoryIcons[item.category]} alt={item.category} />
+                            ) : (
+                                <span className="default-icon">{item.category.charAt(0).toUpperCase()}</span>
+                            )}
+                        </div>
+                        <div className='text'>
+                            <h4>{item.title}</h4>
+                            <p>{item.category}</p>
+                        </div>
                     </div>
                     <div className="right">
                         <span className={item.amount > 0 ? "positive" : "negative"}>
@@ -51,7 +97,7 @@ const TransactionHistory = ({ Icon }) => {
                     </div>
                 </div>
             ))}
-            <p>View All Transactions &rarr;</p>
+            {isFullHistoryRequired && <a href='#' className='full-transaction'>View All Transactions &rarr;</a>}
         </div>
     )
 }

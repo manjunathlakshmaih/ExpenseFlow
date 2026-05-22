@@ -4,4 +4,55 @@
     padding: 20px;
     box-shadow: 2px 5px 10px #4949491a;
     border-radius: 7px;
+    overflow: hidden;
+    height: 392px;
+}
+
+.icon img {
+    width: 35px;
+}
+
+.transaction-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.details h4,
+.right span {
+    font-size: 15px;
+    color: #3b3535;
+    font-weight: 600;
+}
+
+.details p,
+.right p {
+    font-size: 13px;
+    color: #494949;
+    font-weight: 500;
+}
+
+.transaction-history-header h3 {
+    font-size: 18px;
+    color: #535151;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.full-transaction {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    gap: 3px;
+    color: blue;
+    margin-top: 11px;
+    font-weight: 600;
 }

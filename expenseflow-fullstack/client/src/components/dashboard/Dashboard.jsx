@@ -2,13 +2,15 @@ import { useState } from "react";
 import NavHeader from "../layout/Header/Header";
 import DashboardHeader from "../layout/DashboardHeader/DashboardHeader";
 import StatCard from "../layout/Statcard/Statcard";
-import Totalexpense from "../../assets/icons/Totalexpense.png";
-import Totalbalance from "../../assets/icons/Totalbalance.png";
-import Totalincome from "../../assets/icons/Totalincome.png";
-import Monthlybudget from "../../assets/icons/Monthlyexpense.png";
+import Totalbalance from "../../assets/icons/blue-wallet.svg";
+import Totalexpense from "../../assets/icons/Totalexpense.svg";
+import Totalincome from "../../assets/icons/Totalincome.svg";
+import Monthlybudget from "../../assets/icons/Monthlybudget.svg";
 import ExpenseChart from "../charts/lineChart/linecharts";
 import DonutChartContainer from "../charts/donutChart/DonutChartLayout";
 import TransactionHistory from "../charts/transactionHistory/transactionhistory";
+import ExpenseTable from "../expenses/Expenses";
+import BudgetOverview from "../budget/Budget";
 import './Dashboard.css';
 
 const DashboardLayout = ({ children }) => {
@@ -69,6 +71,10 @@ const DashboardLayout = ({ children }) => {
                 <div className="dashboard-charts">
                     <ExpenseChart />
                     <DonutChartContainer />
+                    <TransactionHistory />
+                </div>
+                <div className="budget-overview">
+                    <ExpenseTable />
                     <TransactionHistory />
                 </div>
             </div>

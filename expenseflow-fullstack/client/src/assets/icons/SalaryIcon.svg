@@ -1,0 +1,15 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#4CAF50"/>
+
+  <!-- Wallet -->
+  <rect x="14" y="22" width="36" height="22" rx="4" fill="#ffffff"/>
+
+  <!-- Wallet flap -->
+  <rect x="14" y="22" width="36" height="8" rx="4" fill="#e8f5e9"/>
+
+  <!-- Money symbol -->
+  <text x="32" y="40" font-size="14" text-anchor="middle" fill="#4CAF50" font-family="Arial, sans-serif" font-weight="bold">
+    ₹
+  </text>
+</svg>

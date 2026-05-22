@@ -48,3 +48,10 @@
         grid-template-columns: 1fr;
     }
 }
+
+.budget-overview {
+    display: grid;
+    grid-template-columns: 3.2fr 1fr;
+    margin: 20px;
+    gap: 30px;
+}
