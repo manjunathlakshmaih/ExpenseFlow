@@ -10,7 +10,7 @@ import ExpenseChart from "../charts/lineChart/linecharts";
 import DonutChartContainer from "../charts/donutChart/DonutChartLayout";
 import TransactionHistory from "../charts/transactionHistory/transactionhistory";
 import ExpenseTable from "../expenses/Expenses";
-import BudgetOverview from "../budget/Budget";
+import BudgetOverview from "../budgetoverview/budgetoverview"
 import './Dashboard.css';
 
 const DashboardLayout = ({ children }) => {
@@ -75,7 +75,7 @@ const DashboardLayout = ({ children }) => {
                 </div>
                 <div className="budget-overview">
                     <ExpenseTable />
-                    <TransactionHistory />
+                    <BudgetOverview />
                 </div>
             </div>
         </div>

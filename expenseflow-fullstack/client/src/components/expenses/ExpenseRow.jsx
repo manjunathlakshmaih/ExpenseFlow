@@ -1,3 +1,7 @@
+import { MdOutlineModeEdit } from "react-icons/md";
+import { IoSaveOutline } from "react-icons/io5";
+import { RiDeleteBin6Line } from "react-icons/ri";
+
 const ExpenseRow = ({ item, editId, editData, onChange, onEdit, onDelete, onSave }) => {
     const isEditing = editId === item.id;
 
@@ -35,11 +39,11 @@ const ExpenseRow = ({ item, editId, editData, onChange, onEdit, onDelete, onSave
                         item.date
                     )}
             </td>
-            <td>
+            <td className="btn-fld">
                 {isEditing ? (
-                    <button type="button" onClick={onSave}>save</button>) : (<button type="button" onClick={() => onEdit(item)}>edit</button>)
+                    <button type="button" onClick={onSave}>{<IoSaveOutline size={18}/>}</button>) : (<button type="button" onClick={() => onEdit(item)}>{<MdOutlineModeEdit size={18}/>}</button>)
                 }
-                <button type="button" onClick={() => onDelete(item.id)}>delete</button>
+                <button type="button" onClick={() => onDelete(item.id)}>{<RiDeleteBin6Line color="red" size={18}/>}</button>
 
             </td>
 

@@ -1,0 +1,18 @@
+.budget-overview-conatiner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffff;
+    padding: 20px;
+    box-shadow: 2px 5px 10px #4949491a;
+    border-radius: 7px;
+
+}
+
+.budget-overview-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
