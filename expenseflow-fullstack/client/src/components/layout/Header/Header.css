@@ -63,6 +63,21 @@
 
     .search-input {
         width: 40rem;
+        height: 45px;
+        position: relative;
+        padding: 10px 10px 10px 45px;
+        border-radius: 10px;
+        box-shadow: 2px 5px 10px #4949491a;
+    }
+
+    .search-input::placeholder {
+        color: #D1D5DB;
+    }
+
+    .search-input:focus {
+        outline: none;
+        border-color: #6366F1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
     }
 
     .search-icon {

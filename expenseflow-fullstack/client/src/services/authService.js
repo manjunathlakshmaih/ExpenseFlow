@@ -60,3 +60,7 @@ export const authService = {
         return !!localStorage.getItem("token");
     },
 };
+
+// Export individual functions for use in thunks
+export const registerUser = authService.register;
+export const loginUser = authService.login;

@@ -10,11 +10,13 @@ import ExpenseChart from "../charts/lineChart/linecharts";
 import DonutChartContainer from "../charts/donutChart/DonutChartLayout";
 import TransactionHistory from "../charts/transactionHistory/transactionhistory";
 import ExpenseTable from "../expenses/Expenses";
-import BudgetOverview from "../budgetoverview/budgetoverview"
+import BudgetOverview from "../budgetoverview/budgetoverview";
+import AddExpensePopup from '../common/addExpensePopup/addExpensePopup';
 import './Dashboard.css';
 
 const DashboardLayout = ({ children }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -54,7 +56,10 @@ const DashboardLayout = ({ children }) => {
             extra: <div className="progress">78% used</div>,
         },
     ];
+    const HandleAddExpense = () => {
+        setIsPopupOpen(true);
 
+    }
 
     return (
         <div className="dashboard-layout">
@@ -62,7 +67,7 @@ const DashboardLayout = ({ children }) => {
                 <NavHeader isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} onMenuClose={handleMenuClose} />
             </div>
             <div className={`dashboard-header ${isMenuOpen ? 'shifted' : ''}`}>
-                <DashboardHeader isMenuOpen={isMenuOpen} />
+                <DashboardHeader onClick={HandleAddExpense} isMenuOpen={isMenuOpen} />
                 <div className="dashboard-stats">
                     {dashboardData.map((data, index) => (
                         <StatCard isMenuOpen={isMenuOpen} key={index} {...data} />
@@ -78,6 +83,7 @@ const DashboardLayout = ({ children }) => {
                     <BudgetOverview />
                 </div>
             </div>
+            {isPopupOpen && <AddExpensePopup onClose={() => setIsPopupOpen(false)} />}
         </div>
     )
 }

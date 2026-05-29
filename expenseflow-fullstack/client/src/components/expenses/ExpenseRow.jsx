@@ -31,7 +31,7 @@ const ExpenseRow = ({ item, editId, editData, onChange, onEdit, onDelete, onSave
                         item.amount
                     )}
             </td>
-            <td>
+            <td>zz
                 {isEditing ? (
                     <input name="date" value={editData.date} onChange={onChange} />
                 ) :

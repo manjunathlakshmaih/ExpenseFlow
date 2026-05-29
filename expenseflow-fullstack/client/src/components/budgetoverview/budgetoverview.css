@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: space-between;
     background-color: #ffff;
     padding: 20px;
     box-shadow: 2px 5px 10px #4949491a;
@@ -15,4 +16,11 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+}
+
+.budget-overview-content {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
 }

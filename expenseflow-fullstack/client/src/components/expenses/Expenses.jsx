@@ -84,11 +84,13 @@ const ExpenseTable = () => {
             </div>
             <table>
                 <thead>
-                    <th>Description</th>
-                    <th>Categary</th>
-                    <th>Amount</th>
-                    <th>Date</th>
-                    <th>Actions</th>
+                    <tr>
+                        <th>Description</th>
+                        <th>Categary</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {data.slice(0, 5).map((item) => (

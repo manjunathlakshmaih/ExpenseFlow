@@ -1,18 +1,28 @@
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
+import { useDispatch, useSelector } from "react-redux";
+import { registerThunk } from "../../redux/slices/LoginSlice";
 import RegisterForm from "../../components/auth/RegisterForm/RegisterForm";
 import AuthBanner from "../../components/auth/AuthBanner/AuthBanner";
 import { OrbitProgress } from "react-loading-indicators";
 import "./Register.css";
 
 const Register = () => {
-    const { register, loading, error } = useAuth();
+    const dispatch = useDispatch();
     const navigate = useNavigate();
+    const { loading, error } = useSelector(state => state.auth);
 
     const handleSubmit = async (formData) => {
         try {
-            await register(formData.name, formData.email, formData.password, formData.confirmPassword);
-            navigate("/dashboard");
+            const result = await dispatch(registerThunk({
+                name: formData.name,
+                email: formData.email,
+                password: formData.password,
+                conformPassword: formData.confirmPassword
+            })).unwrap();
+            
+            if (result) {
+                navigate("/dashboard");
+            }
         } catch (err) {
             console.error("Registration failed:", err);
         }

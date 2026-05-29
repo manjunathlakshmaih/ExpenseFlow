@@ -66,7 +66,7 @@
     font-size: 20px;
 }
 
-input {
+.input-container input {
     height: 48px;
     border-radius: 8px;
     border: 1px solid #E5E7EB;
@@ -77,11 +77,11 @@ input {
     box-sizing: border-box;
 }
 
-input::placeholder {
+.input-container input::placeholder {
     color: #D1D5DB;
 }
 
-input:focus {
+.input-container input:focus {
     outline: none;
     border-color: #6366F1;
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);

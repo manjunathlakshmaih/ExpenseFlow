@@ -2,12 +2,12 @@ const UnorderedList = ({ items, className, date }) => {
     return (
         <ul className={className}>
             {items.map((items) => (
-                <a href={items.link || "#"}>
-                    <li key={items.id}>
+                <li key={items.id}>
+                    <a href={items.link || "#"}>
                         {items.icon && <span className="list-icon">{items.icon}</span>}
                         <span className="list-label">{items.label}</span>
-                    </li>
-                </a>
+                    </a>
+                </li>
             ))}
         </ul>
     );

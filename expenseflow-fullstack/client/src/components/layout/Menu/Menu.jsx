@@ -1,4 +1,7 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../../../redux/slices/LoginSlice";
 import UnorderedList from "../../common/list";
 import { FiLogOut } from "react-icons/fi";
 import { IoMdHome } from "react-icons/io";
@@ -14,6 +17,8 @@ import logo from "../../../assets/images/expns_logo.png";
 import './Menu.css';
 
 const DashboardMenu = ({ onClose }) => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const transactions = [
         { id: 1, label: 'Dashboard', icon: <IoMdHome size={25} /> },
@@ -32,6 +37,11 @@ const DashboardMenu = ({ onClose }) => {
         if (onClose) onClose();
     }
 
+    const handleLogout = () => {
+        dispatch(logout());
+        navigate("/");
+    }
+
     return (
         <div className="menu-container">
             <div className="menu-header">
@@ -46,7 +56,7 @@ const DashboardMenu = ({ onClose }) => {
                 />
             </div>
             <div className="logout-button">
-                <button>Logout</button>
+                <button onClick={handleLogout}>Logout</button>
                 <FiLogOut size={35} className="logout-icon" />
             </div>
         </div>
